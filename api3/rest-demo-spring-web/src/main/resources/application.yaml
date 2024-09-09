@@ -1,0 +1,12 @@
+server:
+  port: 8003
+
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.5.58:3306/django?useSSL=false
+    username: apphumano
+    password: 3Te65~*8oJ}K
+
+  jpa:
+    hibernate:
+      ddl-auto: update
