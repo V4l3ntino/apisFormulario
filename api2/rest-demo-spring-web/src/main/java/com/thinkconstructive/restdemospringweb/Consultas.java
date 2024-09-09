@@ -55,7 +55,7 @@ public class Consultas {
              long mesesExperiencia = ChronoUnit.MONTHS.between(fechaIni, fechaActual);
              Integer meses = (int) mesesExperiencia;
 
-            Trabajador trabajador = new Trabajador(nombre,apellido,meses);
+            Trabajador trabajador = new Trabajador(operario.getId(),nombre,apellido,meses);
             updateOperario(trabajador);
         }
     }

@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 @Table(name = "apiapp_trabajador")
 public class Trabajador {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String nombre;
     private String apellido;
