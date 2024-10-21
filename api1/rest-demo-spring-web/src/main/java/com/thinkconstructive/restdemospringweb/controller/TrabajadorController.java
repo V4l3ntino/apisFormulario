@@ -1,5 +1,8 @@
 package com.thinkconstructive.restdemospringweb.controller;
 
+import com.thinkconstructive.restdemospringweb.model.Trabajador;
+import com.thinkconstructive.restdemospringweb.repository.TrabajadorRepository;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -7,8 +7,11 @@ import jakarta.persistence.*;
 public class Trabajador {
     @Id
     private Integer id;
+    @Column(name = "nombre")
     private String nombre;
+    @Column(name = "apellido")
     private String apellido;
+    @Column(name = "experiencia")
     private Integer experiencia;
 
     public Trabajador() {
