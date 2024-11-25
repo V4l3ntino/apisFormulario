@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "apiapp_trabajador")
 public class Trabajador {
     @Id
-    private Integer id;
+    private String id;
     @Column(name = "nombre")
     private String nombre;
     @Column(name = "apellido")
@@ -17,7 +17,7 @@ public class Trabajador {
     public Trabajador() {
     }
 
-    public Trabajador(Integer id, String nombre, String apellido, Integer experiencia) {
+    public Trabajador(String id, String nombre, String apellido, Integer experiencia) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -34,11 +34,11 @@ public class Trabajador {
                 '}';
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

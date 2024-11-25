@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 @EnableScheduling
-
+@SpringBootApplication
 public class Listener {
 
     public static void main(String[] args){

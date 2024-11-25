@@ -17,7 +17,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-@SpringBootApplication
+
 public class Cargar {
     @Autowired
     FormasAccidenteRepository formasAccidenteRepository;

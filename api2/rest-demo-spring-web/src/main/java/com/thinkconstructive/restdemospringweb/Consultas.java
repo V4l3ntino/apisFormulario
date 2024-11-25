@@ -9,6 +9,7 @@ import java.util.*;
 
 import com.thinkconstructive.restdemospringweb.model.*;
 import com.thinkconstructive.restdemospringweb.repository.CloudVendorRepository;
+import com.thinkconstructive.restdemospringweb.repository.HorarioTrabajadorRepository;
 import com.thinkconstructive.restdemospringweb.service.impl.CloudVendorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -31,6 +32,9 @@ public class Consultas {
     CloudVendorServiceImpl cloudVendorService;
     @Autowired
     CloudVendorRepository cloudVendorRepository;
+
+    @Autowired
+    HorarioTrabajadorRepository horarioTrabajadorRepository;
     public static void main(String[] args){
         SpringApplication.run(Consultas.class, args);
     }
@@ -40,6 +44,7 @@ public class Consultas {
         List<CloudVendor> listaOperarios = cloudVendorRepository.findAll();
          DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
          for(CloudVendor operario : listaOperarios){
+            String codigo_trabajador = horarioTrabajadorRepository.findAllById(operario.getId()).getLast().getCodigo_empleado();
             String nombre = "";
             String apellido = "";
              try {
@@ -55,7 +60,7 @@ public class Consultas {
              long mesesExperiencia = ChronoUnit.MONTHS.between(fechaIni, fechaActual);
              Integer meses = (int) mesesExperiencia;
 
-            Trabajador trabajador = new Trabajador(operario.getId(),nombre,apellido,meses);
+            Trabajador trabajador = new Trabajador(codigo_trabajador,nombre,apellido,meses);
             updateOperario(trabajador);
         }
     }
